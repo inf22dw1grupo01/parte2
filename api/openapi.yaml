@@ -1,0 +1,574 @@
+openapi: 3.0.0
+info:
+  title: Pokemon
+  description: 'Uma api para adicionar pokemons a uma equipa '
+  contact:
+    name: "A041100, A041795, A037114"
+    email: A041100@umaia.pt
+  version: 0.0.1
+servers:
+- url: http://localhost:8080/
+  description: DW1_G01 localhost
+  variables:
+    basePath:
+      default: /
+paths:
+  /equipas:
+    get:
+      tags:
+      - EquipaController
+      summary: Retrieve Equipa
+      operationId: retrieveEquipa
+      responses:
+        "200":
+          description: Array of Equipa model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/equipas'
+                x-content-type: application/json
+              x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Equipa
+                items:
+                  $ref: '#/components/schemas/equipas'
+      x-swagger-router-controller: EquipaController
+    post:
+      tags:
+      - EquipaController
+      summary: Create Equipa
+      operationId: createEquipa
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/equipas'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/equipas'
+      responses:
+        "200":
+          description: Create Equipa model instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/equipas'
+      x-swagger-router-controller: EquipaController
+  /equipas/{id_equipa}:
+    get:
+      tags:
+      - EquipaController
+      summary: Retrieve Equipa by ID
+      operationId: retrieveEquipaID
+      parameters:
+      - name: id_equipa
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/equipas'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: EquipaController
+    put:
+      tags:
+      - EquipaController
+      summary: Update Equipa
+      operationId: updateEquipa
+      parameters:
+      - name: id_equipa
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/equipas'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: Equipa PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: EquipaController
+    delete:
+      tags:
+      - EquipaController
+      summary: Delete Equipa
+      operationId: deleteEquipa
+      parameters:
+      - name: id_equipa
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "204":
+          description: No Content
+      x-swagger-router-controller: EquipaController
+  /treinador:
+    get:
+      tags:
+      - TreinadorController
+      summary: Retrieve Treinador
+      operationId: retrieveTreinador
+      responses:
+        "200":
+          description: Array of Treinador model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/treinador'
+                x-content-type: application/json
+              x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Treinador
+                items:
+                  $ref: '#/components/schemas/treinador'
+      x-swagger-router-controller: TreinadorController
+    post:
+      tags:
+      - TreinadorController
+      summary: Create Treinador
+      operationId: createTreinador
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/treinador'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/treinador'
+      responses:
+        "200":
+          description: Create Treinador model instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/treinador'
+      x-swagger-router-controller: TreinadorController
+  /treinador/{id_treinador}:
+    get:
+      tags:
+      - TreinadorController
+      summary: Retrieve Treinador by ID
+      operationId: retrieveTreinadorID
+      parameters:
+      - name: id_treinador
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/treinador'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: TreinadorController
+    put:
+      tags:
+      - TreinadorController
+      summary: Update Treinador
+      operationId: updateTreinador
+      parameters:
+      - name: id_treinador
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/treinador'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: Treinador PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: TreinadorController
+    delete:
+      tags:
+      - TreinadorController
+      summary: Delete Treinador
+      operationId: deleteTreinador
+      parameters:
+      - name: id_treinador
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "204":
+          description: No Content
+      x-swagger-router-controller: TreinadorController
+  /pokemon:
+    get:
+      tags:
+      - PokemonController
+      summary: Retrieve Pokemon
+      operationId: retrievePokemon
+      responses:
+        "200":
+          description: Array of Pokemon model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pokemon'
+                x-content-type: application/json
+              x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Equipa
+                items:
+                  $ref: '#/components/schemas/pokemon'
+      x-swagger-router-controller: PokemonController
+    post:
+      tags:
+      - PokemonController
+      summary: Create Pokemon
+      operationId: createPokemon
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pokemon'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/pokemon'
+      responses:
+        "200":
+          description: Create Pokemon model instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pokemon'
+      x-swagger-router-controller: PokemonController
+  /pokemon/{id_pokemon}:
+    get:
+      tags:
+      - PokemonController
+      summary: Retrieve Pokemon by ID
+      operationId: retrievePokemonID
+      parameters:
+      - name: id_pokemon
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pokemon'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: PokemonController
+    put:
+      tags:
+      - PokemonController
+      summary: Update Pokemon
+      operationId: updatePokemon
+      parameters:
+      - name: id_pokemon
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pokemon'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: Pokemon PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: PokemonController
+    delete:
+      tags:
+      - PokemonController
+      summary: Delete Pokemon
+      operationId: deletePokemon
+      parameters:
+      - name: id_pokemon
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "204":
+          description: No Content
+      x-swagger-router-controller: PokemonController
+  /Tipo:
+    get:
+      tags:
+      - TipoController
+      summary: Retrieve Tipo
+      operationId: retrieveTipo
+      responses:
+        "200":
+          description: Array of Tipo model instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/tipo'
+                x-content-type: application/json
+              x-content-type: application/json
+            application/xml:
+              schema:
+                type: array
+                xml:
+                  name: Tipo
+                items:
+                  $ref: '#/components/schemas/tipo'
+      x-swagger-router-controller: TipoController
+    post:
+      tags:
+      - TipoController
+      summary: Create Tipo
+      operationId: createTipo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tipo'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/tipo'
+      responses:
+        "200":
+          description: Create Tipo model instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tipo'
+      x-swagger-router-controller: TipoController
+  /tipo/{id_tipo}:
+    get:
+      tags:
+      - TipoController
+      summary: Retrieve Tipo by ID
+      operationId: retrieveTipoID
+      parameters:
+      - name: id_tipo
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tipo'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: TipoController
+    put:
+      tags:
+      - TipoController
+      summary: Update Tipo
+      operationId: updateTipo
+      parameters:
+      - name: id_tipo
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tipo'
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: Tipo PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: TipoController
+    delete:
+      tags:
+      - TipoController
+      summary: Delete Tipo
+      operationId: deleteTipo
+      parameters:
+      - name: id_tipo
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+      responses:
+        "204":
+          description: No Content
+      x-swagger-router-controller: TipoController
+components:
+  schemas:
+    equipas:
+      title: Equipas
+      type: object
+      properties:
+        id_equipa:
+          type: integer
+          format: int64
+        nome:
+          type: string
+      example:
+        nome: "Nome_Equipa"
+    treinador:
+      title: Treinador
+      type: object
+      properties:
+        id_treinador:
+          type: integer
+          format: int64
+        nome:
+          type: string
+      example:
+        id_treinador: 0
+        nome: nome
+    pokemon:
+      title: Pokemon
+      type: object
+      properties:
+        id_pokemon:
+          type: integer
+          format: int64
+        nome:
+          type: string
+        primeiro_tipo:
+          type: string
+        segundo_tipo:
+          type: string
+      example:
+        primeiro_tipo: primeiro_tipo
+        nome: nome
+        segundo_tipo: segundo_tipo
+        id_pokemon: 0
+    tipo:
+      title: Tipo
+      type: object
+      properties:
+        id_tipo:
+          type: integer
+          format: int64
+        nome:
+          type: string
+      example:
+        nome: nome
+        id_tipo: 0

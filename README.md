@@ -20,14 +20,6 @@ A PokemonAPI é um sistema de criação de equipas poemon feito para o utilizado
 * Docker
 * NojeJS
 
-# Apresentação do projeto
-
-# Recursos
-
-# Produto
-
-# Apresentação
-
 #Equipa Responsável
 * David Brito A037114 [@DavidBrito12](https://https://github.com/DavidBrito12)
 * Tiago Pereira A041795

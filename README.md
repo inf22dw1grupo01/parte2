@@ -5,7 +5,7 @@ Este repositório serve para alojar o projeto para a parte 2 da avaliação de r
 A PokemonAPI é um sistema de criação de equipas poemon feito para o utilizador criar as suas equipas de acordo com as suas preferências.
 
 # Organização do repositório
-* Pode encontrar o código fonte em
+* Pode encontrar o código fonte em [api folder](api/).
 * Pode encontrar a base de dados em
 * Pode encontrar o resto dos documentos em
 

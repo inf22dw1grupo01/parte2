@@ -8,6 +8,7 @@ A PokemonAPI é um sistema de criação de equipas poemon feito para o utilizado
 * Pode encontrar o código fonte em [api folder](api/).
 * Pode encontrar a base de dados em [db folder](db/).
 * Pode encontrar os controladores em [controllers folder](controllers/).
+* Pode encontrar o resto dos documentos em [docs folder](docs/).
 
 # Tecnologias
 * XML
